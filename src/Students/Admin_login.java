@@ -170,11 +170,9 @@ public class Admin_login extends javax.swing.JFrame {
         String log,pw;
         log=login.getText();
         pw=new String(pwd.getPassword());
-        String[] users={"dikshant","prajwal","shadow"};
-        String[] pass={"1234","5678","8426"};
         int i;
         for(i=0;i<3;i++){
-            if(log.equals(users[i])&&pw.equals(pass[i])){
+            if(log.equals(Credentials.adminUserNames[i]) && pw.equals(Credentials.adminPassword[i])){
                 new Admin_option().setVisible(true);
                 this.setVisible(false);
                 break;

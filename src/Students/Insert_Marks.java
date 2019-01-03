@@ -241,7 +241,7 @@ public class Insert_Marks extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con;
 
-            con=DriverManager.getConnection("JDBC:mysql://localhost:3306/mysql","root","1234");
+            con=DriverManager.getConnection("JDBC:mysql://localhost:3306/mysql","root",Credentials.sqlPassword);
             Statement stmt;
             stmt=con.createStatement();
             stmt.executeUpdate("use resultsystem;");

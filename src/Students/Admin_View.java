@@ -22,21 +22,12 @@ public class Admin_View extends javax.swing.JFrame {
         showDetails();
     }
     public void showDetails() {
-        DefaultTableModel model =  new DefaultTableModel() {
-
-        @Override
-        public boolean isCellEditable(int row, int column) {
-            //Only the third column
-            return column == 3;
-        }
-     };
-
-    
+        DefaultTableModel model = (DefaultTableModel)table.getModel();    
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con;
 
-            con=DriverManager.getConnection("JDBC:mysql://localhost:3306/mysql","root","1234");
+            con=DriverManager.getConnection("JDBC:mysql://localhost:3306/mysql","root",Credentials.sqlPassword);
             Statement stmt;
 
             stmt=con.createStatement();
